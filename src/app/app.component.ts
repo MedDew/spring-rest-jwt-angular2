@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'spring-rest-jwt-angular2';
+  name: String = "Med";
+  show : boolean = false;
+  names : String[] = ["Lenny", "Boy", "Marc"];
+
+  clicked(): void{
+    console.log("SHOW");
+    console.log(this.name);
+    console.log(this.show);
+    let value : boolean = !this.show;
+    console.log(value);
+    this.show = !this.show
+  }
 }
