@@ -1,0 +1,33 @@
+<div>
+  <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+    <label for="brand">Login</label>
+    <br/>
+    <br/>
+    <input type="text" formControlName="login" id="login"/>
+    <div *ngIf="isSubmitted && loginForm.controls.login.errors && loginForm.controls.login.errors.required">
+        <span style="color: red; font-weight: bold;">
+          Please enter your username
+        </span>
+    </div>
+
+    <br/>
+    <br/>
+    <label for="password">Password</label>
+    <br/>
+    <br/>
+    <input type="password" formControlName="pw" id="password"/>
+    <div *ngIf="isSubmitted && loginForm.controls.pw.errors">
+        <span style="color: red; font-weight: bold;">
+          Please enter your password
+        </span>
+    </div>
+    <br/>
+    <br/>
+    <button>Login</button>
+    <br/>
+    <br/>
+    <div *ngIf="error" style="text-align: center ;width: 308px ;color: red; font-weight: bold; background-color: #ffb3b3;">
+      {{error.message}}
+    </div>
+  </form>
+</div>
