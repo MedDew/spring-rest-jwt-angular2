@@ -1,0 +1,19 @@
+<p>
+  user-detail works!
+</p>
+<div>
+  <h1>User details of {{user.username}}</h1>
+  <dl>
+    <dt>Username : </dt>
+    <dd>{{user.username}}</dd>
+    
+    <dt>Email : </dt>
+    <dd>{{user.email}}</dd>
+
+    <dt>Role(s) : </dt>
+    <dd *ngFor="let role of user.roles">
+      {{ role == "ROLE_ADMIN" ? 'Admin' : "User"}}
+    </dd>
+  </dl>
+</div>
+<a [routerLink]="['/login']">LogOut</a>
